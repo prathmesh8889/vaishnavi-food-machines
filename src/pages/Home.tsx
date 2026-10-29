@@ -1,66 +1,91 @@
 import { Link } from 'react-router-dom';
 
+const LOGO_URL = 'https://image.qwenlm.ai/generated-images/cb2bc48c-b5ee-40fc-afb5-a285a7156f52/_result.png';
+const HERO_URL = 'https://image.qwenlm.ai/generated-images/fe0f9af0-d2a8-46fa-b679-d28976a22ee9/_result.png';
+
+const machineImages: Record<string, string> = {
+  'Pani Puri Machine': 'https://image.qwenlm.ai/generated-images/e818550d-8541-45e4-a5a9-16e2cd8ac81e/_result.png',
+  'Papad Machine': 'https://image.qwenlm.ai/generated-images/ba1d8569-a72b-4705-8453-e02aeaf0f12d/_result.png',
+  'Atta Mixer Machine': 'https://image.qwenlm.ai/generated-images/f70b9ce3-bacf-4d22-a335-93b32b002bd8/_result.png',
+  'Namkeen Making Machine': 'https://image.qwenlm.ai/generated-images/a258f8aa-7837-4805-984d-2202f12edc15/_result.png',
+  'Samosa Making Machine': 'https://image.qwenlm.ai/generated-images/e1569c18-ed52-4817-8e98-2fadbb87a055/_result.png',
+  'Chakli Making Machine': 'https://image.qwenlm.ai/generated-images/2b73ad86-15d5-44c0-aafb-87a64d5791a7/_result.png',
+};
+
 export default function Home() {
   const features = [
     {
-      icon: '⚙️',
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+        </svg>
+      ),
       title: 'High Quality',
       description: 'Premium materials and precision engineering for long-lasting performance.',
     },
     {
-      icon: '🚀',
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
       title: 'Efficient Performance',
       description: 'Optimized machines that boost your production capacity significantly.',
     },
     {
-      icon: '🛠️',
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+      ),
       title: 'Reliable Support',
       description: 'Dedicated after-sales service and maintenance support for all machines.',
     },
     {
-      icon: '📦',
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+        </svg>
+      ),
       title: 'On-Time Delivery',
       description: 'Timely manufacturing and delivery to keep your business on track.',
     },
   ];
 
-  const machines = [
-    { name: 'Pani Puri Machine', emoji: '🥟' },
-    { name: 'Papad Machine', emoji: '🫓' },
-    { name: 'Atta Mixer Machine', emoji: '🥣' },
-    { name: 'Namkeen Making Machine', emoji: '🍿' },
-    { name: 'Samosa Making Machine', emoji: '📐' },
-    { name: 'Chakli Making Machine', emoji: '🌀' },
-  ];
+  const machines = Object.entries(machineImages);
 
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-orange-600 via-red-600 to-red-800 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-            backgroundSize: '40px 40px'
-          }}></div>
+      <section className="relative bg-[#0c2340] text-white overflow-hidden min-h-[600px]">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src={HERO_URL}
+            alt="Food Processing Factory"
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0c2340] via-[#0c2340]/90 to-[#0c2340]/70"></div>
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative">
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-36 relative">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-4 py-1 mb-6">
-                <span className="text-sm font-medium">Innovation | Quality | Your Growth Partner</span>
+            <div className="animate-fade-in-up">
+              <div className="inline-flex items-center bg-[#c9a227]/20 border border-[#c9a227]/40 rounded-full px-4 py-1.5 mb-6">
+                <span className="text-sm font-medium text-[#c9a227]">Innovation | Quality | Your Growth Partner</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                 Make Your Food Business{' '}
-                <span className="text-yellow-300">Grow...</span>
+                <span className="gradient-text">Grow...</span>
               </h1>
-              <p className="text-xl text-orange-100 mb-8 leading-relaxed">
+              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                 Food Processing Machines for Your Business Success. We manufacture high-quality 
                 machines that help you scale your food production efficiently.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/products"
-                  className="inline-flex items-center justify-center px-8 py-3 bg-yellow-400 text-gray-900 rounded-lg font-bold text-lg hover:bg-yellow-300 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center px-8 py-3.5 bg-[#c9a227] text-[#0c2340] rounded-lg font-bold text-lg hover:bg-[#f5d060] transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                 >
                   View Our Machines
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -69,61 +94,76 @@ export default function Home() {
                 </Link>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center px-8 py-3 border-2 border-white text-white rounded-lg font-bold text-lg hover:bg-white hover:text-orange-700 transition-all"
+                  className="inline-flex items-center justify-center px-8 py-3.5 border-2 border-[#c9a227] text-[#c9a227] rounded-lg font-bold text-lg hover:bg-[#c9a227] hover:text-[#0c2340] transition-all"
                 >
                   Send Enquiry
                 </Link>
               </div>
             </div>
-            <div className="hidden md:flex justify-center">
+            <div className="hidden md:flex justify-center animate-fade-in">
               <div className="relative">
-                <div className="w-72 h-72 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20">
-                  <div className="w-56 h-56 bg-white/10 rounded-full flex items-center justify-center border border-white/20">
-                    <div className="text-center">
-                      <div className="text-6xl mb-2">🏭</div>
-                      <p className="text-sm font-medium">Food Processing</p>
-                      <p className="text-sm font-medium">Solutions</p>
-                    </div>
-                  </div>
+                <div className="w-80 h-80 rounded-2xl overflow-hidden shadow-2xl border-2 border-[#c9a227]/30 animate-pulse-glow">
+                  <img
+                    src="https://image.qwenlm.ai/generated-images/f70b9ce3-bacf-4d22-a335-93b32b002bd8/_result.png"
+                    alt="Food Processing Machine"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="absolute -top-4 -right-4 w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg animate-bounce">
-                  <span className="text-2xl">⚡</span>
+                <div className="absolute -top-4 -right-4 w-16 h-16 bg-[#c9a227] rounded-full flex items-center justify-center shadow-lg">
+                  <span className="text-[#0c2340] font-bold text-xs text-center leading-tight">Since<br/>Years</span>
                 </div>
-                <div className="absolute -bottom-4 -left-4 w-14 h-14 bg-green-400 rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-xl">✓</span>
+                <div className="absolute -bottom-4 -left-4 w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg">
+                  <span className="text-[#0c2340] text-xl">✓</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Bottom wave */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 100L1440 100L1440 0C1440 0 1080 80 720 80C360 80 0 0 0 0L0 100Z" fill="#f8fafc"/>
+          </svg>
+        </div>
       </section>
 
       {/* Machines Overview */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Food Processing Machines
+          <div className="text-center mb-14">
+            <span className="inline-block bg-[#0c2340] text-[#c9a227] text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3">Our Products</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0c2340] mb-4">
+              Food Processing Machines
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               We manufacture a wide range of food processing machines to help your business thrive.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {machines.map((machine) => (
-              <div
-                key={machine.name}
-                className="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            {machines.map(([name, image]) => (
+              <Link
+                to="/products"
+                key={name}
+                className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
               >
-                <div className="text-4xl mb-3">{machine.emoji}</div>
-                <h3 className="text-sm font-semibold text-gray-800">{machine.name}</h3>
-              </div>
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={image}
+                    alt={name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-4 text-center">
+                  <h3 className="text-sm md:text-base font-bold text-[#0c2340] group-hover:text-[#c9a227] transition-colors">{name}</h3>
+                </div>
+              </Link>
             ))}
           </div>
-          <div className="text-center mt-8">
+          <div className="text-center mt-10">
             <Link
               to="/products"
-              className="inline-flex items-center text-orange-600 font-semibold hover:text-orange-700 transition-colors"
+              className="inline-flex items-center text-[#1e40af] font-semibold hover:text-[#c9a227] transition-colors border-b-2 border-[#c9a227] pb-1"
             >
               View All Products
               <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -135,10 +175,11 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-14">
+            <span className="inline-block bg-[#0c2340] text-[#c9a227] text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3">Why Us</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0c2340] mb-4">
               Why Choose Vaishnavi Engineers?
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -149,11 +190,13 @@ export default function Home() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="text-center p-6 rounded-xl hover:bg-orange-50 transition-colors duration-300"
+                className="text-center p-8 rounded-2xl hover:bg-[#0c2340] group transition-all duration-300 border border-gray-100 hover:border-[#c9a227]/30 hover:shadow-xl"
               >
-                <div className="text-5xl mb-4">{feature.icon}</div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
+                <div className="w-16 h-16 bg-[#0c2340] group-hover:bg-[#c9a227] rounded-xl flex items-center justify-center mx-auto mb-5 text-[#c9a227] group-hover:text-[#0c2340] transition-all">
+                  {feature.icon}
+                </div>
+                <h3 className="text-lg font-bold text-[#0c2340] group-hover:text-white mb-2 transition-colors">{feature.title}</h3>
+                <p className="text-gray-600 group-hover:text-gray-300 text-sm leading-relaxed transition-colors">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -161,17 +204,23 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-orange-600 to-red-700 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative py-20 bg-[#0c2340] text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, #c9a227 1px, transparent 0)',
+            backgroundSize: '40px 40px'
+          }}></div>
+        </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Scale Your Food Business?
           </h2>
-          <p className="text-xl text-orange-100 mb-8">
+          <p className="text-xl text-gray-300 mb-8">
             Send us your enquiry today and let us help you find the perfect machine for your needs.
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center px-8 py-4 bg-yellow-400 text-gray-900 rounded-lg font-bold text-lg hover:bg-yellow-300 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+            className="inline-flex items-center px-8 py-4 bg-[#c9a227] text-[#0c2340] rounded-lg font-bold text-lg hover:bg-[#f5d060] transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
           >
             Send Your Enquiry Today!
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -182,23 +231,23 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gray-900 text-white">
+      <section className="py-16 bg-[#0a1929] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-orange-400 mb-2">6+</div>
+            <div className="p-4">
+              <div className="text-3xl md:text-4xl font-bold text-[#c9a227] mb-2">6+</div>
               <p className="text-gray-400 text-sm">Machine Types</p>
             </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-orange-400 mb-2">100%</div>
+            <div className="p-4">
+              <div className="text-3xl md:text-4xl font-bold text-[#c9a227] mb-2">100%</div>
               <p className="text-gray-400 text-sm">Quality Assured</p>
             </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-orange-400 mb-2">24/7</div>
+            <div className="p-4">
+              <div className="text-3xl md:text-4xl font-bold text-[#c9a227] mb-2">24/7</div>
               <p className="text-gray-400 text-sm">Support Available</p>
             </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-orange-400 mb-2">On-Time</div>
+            <div className="p-4">
+              <div className="text-3xl md:text-4xl font-bold text-[#c9a227] mb-2">On-Time</div>
               <p className="text-gray-400 text-sm">Delivery Guaranteed</p>
             </div>
           </div>
