@@ -218,15 +218,40 @@ export default function Home() {
           <p className="text-xl text-gray-300 mb-8">
             Send us your enquiry today and let us help you find the perfect machine for your needs.
           </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center px-8 py-4 bg-[#c9a227] text-[#0c2340] rounded-lg font-bold text-lg hover:bg-[#f5d060] transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-          >
-            Send Your Enquiry Today!
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center px-8 py-4 bg-[#c9a227] text-[#0c2340] rounded-lg font-bold text-lg hover:bg-[#f5d060] transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+            >
+              Send Enquiry
+              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+            <a
+              href="tel:+917083944413"
+              className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#c9a227] text-[#c9a227] rounded-lg font-bold text-lg hover:bg-[#c9a227] hover:text-[#0c2340] transition-all"
+            >
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              Call Now
+            </a>
+          </div>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm">
+            <a href="tel:+917083944413" className="flex items-center gap-2 text-gray-300 hover:text-[#c9a227] transition-colors">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              +91 70839 44413
+            </a>
+            <a href="mailto:pankajbagar4@gmail.com" className="flex items-center gap-2 text-gray-300 hover:text-[#c9a227] transition-colors">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              pankajbagar4@gmail.com
+            </a>
+          </div>
         </div>
       </section>
 
